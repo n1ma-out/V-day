@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background-color:#ffd1e6; text-align:center; font-family: Arial, Helvetica, sans-serif; margin:0; padding:2rem; }
+    .heart { font-size:48px; margin-top:2rem; }
+    .back { display:inline-block; margin-top:1.5rem; padding:10px 20px; background:#28a745; color:white; border-radius:6px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <h1 class="typewriter">Yes! 💖</h1>
+  <p class="heart typewriter">Thank you baby— that made my day💫!</p>
+  <div>
+    <img id="yesGif" src="" alt="yes gif" style="max-width:45%; max-height:45vh; width:auto; height:auto; display:block; margin:1rem auto; border-radius:8px;" />
+  </div>
+  <a href="page2.html" class="back">Back to start</a>
+  <script src="typewriter.js"></script>
+  <script>
+    // Show yes.gif only if yesClicked flag is set
+    (function(){
+      try{
+        const yesFlag = localStorage.getItem('yesClicked');
+        if(yesFlag){
+          document.getElementById('yesGif').src = '../contents/yes.gif';
+        } else {
+          // hide image element if not clicked
+          document.getElementById('yesGif').style.display = 'none';
+        }
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
